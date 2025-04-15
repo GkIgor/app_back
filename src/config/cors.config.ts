@@ -1,7 +1,6 @@
 export const corsConfig = () => {
   const env = process.env.NODE_ENV || 'development';
-  const client_app_url =
-    process.env.CLIENT_APP_URL || 'app.finanmalagueta.com.br';
+  const client_app_url = process.env.CLIENT_APP_URL || 'app.finanmalagueta.com.br';
 
   const corsOptions = {
     development: {

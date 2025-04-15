@@ -1,10 +1,5 @@
 import { Module } from '@nestjs/common';
-import {
-  AuthGetController,
-  AuthPostController,
-  LoginService,
-  TokenService,
-} from './auth.index';
+import { AuthGetController, AuthPostController, LoginService, TokenService } from './auth.index';
 
 @Module({
   controllers: [AuthGetController, AuthPostController],
