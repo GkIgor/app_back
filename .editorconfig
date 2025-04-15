@@ -1,0 +1,28 @@
+# EditorConfig é um arquivo de configuração para manter estilos de codificação consistentes entre editores e IDEs.
+# Mais informações: https://editorconfig.org
+
+root = true
+
+[*]
+# Usar 2 espaços para indentação
+indent_style = space
+indent_size = 2
+
+# Quebras de linha no estilo LF (Unix)
+end_of_line = lf
+
+# Caracteres de espaço no final de cada linha não são permitidos
+trim_trailing_whitespace = true
+
+# Adicionar nova linha ao final do arquivo
+insert_final_newline = true
+
+# Usar aspas simples
+quote_type = single
+
+[*.{js,ts,jsx,tsx,json,css,scss}]
+# Definir tabulação como espaços e largura de 2
+indent_size = 2
+
+# Fim de linha: LF
+end_of_line = lf
