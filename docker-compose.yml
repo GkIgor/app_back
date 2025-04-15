@@ -1,0 +1,21 @@
+version: '3.3'
+
+services:
+  app_backend:
+    container_name: container-backend
+    image: image-url
+    env_file:
+      - .env.development
+    restart: always
+    environment:
+      - PORT=3000
+    expose:
+      - 3000
+    ports:
+      - 3000:3000
+    networks:
+      - defaultnetwork
+
+networks:
+  defaultnetwork:
+    driver: bridge
