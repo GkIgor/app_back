@@ -1,5 +1,5 @@
 import { DataSource } from 'typeorm';
-import { Seeder } from 'typeorm-extension';
+import type { Seeder } from 'typeorm-extension';
 
 export default class UserSeeder implements Seeder {
   track?: boolean | undefined;

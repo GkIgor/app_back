@@ -1,27 +1,18 @@
 // @ts-check
 import eslint from '@eslint/js';
-import eslintPluginPrettierRecommended, { settings } from 'eslint-plugin-prettier/recommended';
+import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import * as importPlugin from 'eslint-plugin-import';
 
 export default tseslint.config(
   {
-    ignores: ['eslint.config.mjs', 'dist', 'node_modules'],
+    ignores: ['eslint.config.mjs', 'commitlint.config.js', 'dist', 'node_modules'],
   },
   eslint.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
   eslintPluginPrettierRecommended,
   importPlugin.flatConfigs?.recommended,
-  {
-    settings: {
-      'import/resolver': {
-        node: {
-          extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        },
-      },
-    },
-  },
   {
     extends: [],
     languageOptions: {
@@ -32,6 +23,13 @@ export default tseslint.config(
       parserOptions: {
         projectService: true,
         tsconfigRootDir: import.meta.dirname,
+      },
+    },
+    settings: {
+      'import/resolver': {
+        node: {
+          extensions: ['.js', '.jsx', '.ts', '.tsx', '.d.ts'],
+        },
       },
     },
   },

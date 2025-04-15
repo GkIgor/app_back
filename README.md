@@ -1,29 +1,101 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+## Commit lint
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Ahh, saquei! Tu quer uma doczinha explicando como **seguir o padrão de commit** usando o Conventional Commits. Aqui vai a versão simplificada pra galera saber como mandar commits certinhos:
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+---
 
-## Description
+### 📚 **Guia de Commit Padrão: Conventional Commits**
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Esta documentação serve para garantir que todos sigam um padrão de mensagens de commit claro e consistente, facilitando o entendimento do histórico de commits e a automação de versões.
+
+---
+
+### 🎯 **Objetivo do Padrão**
+
+O padrão **Conventional Commits** ajuda a definir um formato consistente para as mensagens de commit. Isso facilita a automação de tarefas, como:
+
+- Geração automática de changelogs
+- Incremento de versão (SemVer)
+- Identificação fácil de mudanças no código
+
+---
+
+### 📝 **Formato de Commit**
+
+Cada mensagem de commit deve seguir o formato:
+
+```
+<tipo>(<escopo>): <descrição>
+```
+
+Onde:
+
+- **`<tipo>`**: Descreve o tipo da mudança (como `feat`, `fix`, `chore`, etc.).
+- **`<escopo>`** (opcional): Indica a parte do sistema que foi alterada (por exemplo, `auth`, `ui`, `api`).
+- **`<descrição>`**: Uma breve descrição do que foi feito.
+
+Exemplo:
+
+```
+feat(auth): adicionar login com Google
+fix(ui): corrigir botão de envio
+chore(tests): melhorar cobertura de testes de API
+```
+
+---
+
+### 🔑 **Tipos Comuns de Commits**
+
+- **`feat:`** — Usado para novas funcionalidades ou recursos.
+  - Exemplo: `feat(auth): adicionar login com Google`
+- **`fix:`** — Usado para corrigir bugs.
+  - Exemplo: `fix(button): corrigir erro de clique duplo`
+- **`chore:`** — Usado para tarefas de manutenção e ajustes no projeto.
+  - Exemplo: `chore(tests): atualizar testes de integração`
+- **`docs:`** — Mudanças relacionadas a documentação.
+  - Exemplo: `docs: atualizar README com novas instruções de setup`
+- **`style:`** — Mudanças no estilo do código (ex.: formatação, espaçamento, etc).
+  - Exemplo: `style: corrigir indentação do arquivo main.ts`
+- **`refactor:`** — Refatoração de código sem mudança de funcionalidade.
+  - Exemplo: `refactor: refatorar lógica de autenticação`
+- **`perf:`** — Mudanças que melhoram o desempenho.
+  - Exemplo: `perf: otimizar consulta ao banco de dados`
+- **`test:`** — Mudanças ou adições de testes.
+  - Exemplo: `test(auth): adicionar teste de login com Google`
+
+---
+
+### 🚨 **Mensagens Erradas**
+
+Evite mensagens vagas ou que não sigam o formato:
+
+- **Errado:** `arrumei umas coisas`
+- **Errado:** `corrigi o bug`
+
+Essas mensagens não são claras o suficiente sobre o que foi feito e não seguem o formato necessário.
+
+---
+
+### 🏗️ **Exemplo de Workflow**
+
+1. Antes de começar a programar, faça um `git pull` para garantir que você tem a versão mais recente do código.
+2. Escreva seu código ou faça a correção.
+3. Crie um commit com uma mensagem que siga o padrão. Exemplo:
+
+```bash
+git commit -m "feat(auth): adicionar login com Google"
+```
+
+4. Envie seu commit para o repositório remoto.
+
+---
+
+### 🛠️ **Dicas Extras**
+
+- **Escopo:** Se você sabe exatamente qual parte do sistema foi modificada, adicione o **escopo** (como `ui`, `auth`, `api`, etc.).
+- **Imperativo:** Sempre escreva a mensagem no **imperativo**, como se estivesse dando uma instrução. Por exemplo, `fix: corrigir bug` em vez de `fixed: corrigido bug`.
+
+---
 
 ## Project setup
 

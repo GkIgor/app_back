@@ -1,5 +1,6 @@
 #!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
 
-pnpx lint-staged
+pnpx lint-staged;
+pnpm exec commitlint -e $1
 pnpm test
+
